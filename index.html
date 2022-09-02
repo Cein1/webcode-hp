@@ -4,6 +4,9 @@
   <title>김희연</title>
   <meta charset="utf-8">
   <style>
+    body{
+      margin:0;
+    }
     a {
       color:black;
       text-decoration: none;
@@ -12,14 +15,42 @@
     h1{
       text font-size: 45px;
       text-align:center;
+      border-bottom:1px solid gray;
+      margin:0;
+      padding:20px;
+    }
+
+    ol{ /* ol은 block level element */
+      border-right:1px solid gray;
+      width:200px;
+      margin:0;
+      padding:20px;
+    }
+
+    #grid{
+      display:grid;
+      grid-template-columns: 250px 1fr;
     }
 
   </style>
-</head>
+  </head>
 
-<body>
+  <body>
   <h1>HEE YEON KIM</h1>
-  <strong>목차</strong>
+
+  <input id="night_day" type="button" value="night" onclick="
+    if(document.querySelector('#night_day').value === 'night'){
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white';
+      document.querySelector('#night_day').value = 'day';
+    } else{
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+      document.querySelector('#night_day').value = 'night';
+    }
+  ">
+
+  <div id="grid">
     <ol>
         <li><a href="index.html" style="color:red;text-decoration:underline">프로파일</a></li>
         <li><a href="1.html">조인배경</a></li>
@@ -27,14 +58,18 @@
         <li><a href="3.html">사진을 넣을 수 있다</a></li>
     </ol>
 
-  <h2>프로파일</h2>
-  <p><ul>
-    <li><strong>경험직군:</strong> 물류운영</li>
-    <li><strong>취미:</strong> 누워 있기</li>
-    <li><strong>특기:</strong> 방에 있기</li>
-    <li><strong>좋아하는 드라마:</strong> 나의 해방일지 / 잔잔한데 뻔하지 않은 캐릭터와 성격이 좋았음</li>
-    <li><strong>근황:</strong> 발길 닿는대로 소속되어 일함. 퇴사예정자.</li>
-    </ul></p>
+    <div>
+      <h2>프로파일</h2>
+      <p><ul>
+        <li><strong>경험직군:</strong> 물류운영</li>
+        <li><strong>취미:</strong> 누워 있기</li>
+        <li><strong>특기:</strong> 방에 있기</li>
+        <li><strong>좋아하는 드라마:</strong> 나의 해방일지 / 잔잔한데 뻔하지 않은 캐릭터와 성격이 좋았음</li>
+        <li><strong>근황:</strong> 발길 닿는대로 소속되어 일함. 퇴사예정자.</li>
+        </ul></p>
+    </div>
+
+  </div>
 
 </body>
 </html>
